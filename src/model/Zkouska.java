@@ -31,6 +31,18 @@ public class Zkouska implements Serializable
     }
     
     
+    public int getMaxPocetBoduZaPredmet()
+    {
+        return predmet.getMaxPocetBodu();
+    }
+    
+    
+    public int getMinPocetBoduProPrijetiZaPredmet()
+    {
+        return predmet.getMinPocetBoduProPrijeti();
+    }
+    
+    
     public String getNazevPredmetu()
     {
         return predmet.getNazev();

@@ -39,6 +39,7 @@ public class EvidenceApp
             System.out.println("S - Smazat ucastnika");
             System.out.println("N - Nacist evidenci");
             System.out.println("U - Ulozit evidenci");
+            System.out.println("T - Export do txt");
             System.out.println("K - Konec");
             System.out.println();
             volba = Character.toUpperCase(Vstupy.ctiChar("Vase volba: "));
@@ -77,6 +78,10 @@ public class EvidenceApp
                     
                 case 'U':
                     this.uloz();
+                    break;
+                    
+                case 'T':
+                    evidence.export();
                     break;
 
                 default:
@@ -156,7 +161,7 @@ public class EvidenceApp
     }
     
     
-    private void uloz() {
+    private void uloz() {        
         try {
             ObjectOutputStream output = new ObjectOutputStream(
                                         new FileOutputStream("evidence.dat"));
@@ -166,7 +171,8 @@ public class EvidenceApp
             System.out.println("CHYBA: Nelze ulozit soubor. " + e.getMessage());
         }
     }
-
+    
+   
 
     public static void main(String[] args)
     {
